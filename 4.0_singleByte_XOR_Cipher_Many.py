@@ -28,7 +28,7 @@ for line in fh:
         #print(result)
             for item in result:
                 #print(f"{item.lang}: {item.prob}")
-                if ((item.lang =="en") and item.prob >= 0.999997):  
+                if ((item.lang =="en") and item.prob >= 0.999996):  
                     #print(f"{item.lang}: {item.prob}")
                     print("--en-->",text, "--key-->", chr(values), "--lan-->", item.lang, "score:", item.prob)
                 else:
