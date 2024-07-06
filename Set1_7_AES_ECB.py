@@ -11,6 +11,9 @@ cipher_text=base64.b64decode(data)
 
 cipher = AES.new(key,AES.MODE_ECB)
 
-plaintext = cipher.decrypt(cipher_text)
+plaintext = cipher.decrypt(cipher_text) # returns a byte string
+string_text = plaintext.decode('utf-8') #  Decoding the bytes to a string
+lines = string_text.split('\n') # Splitting the text by newline character
 
-print(plaintext)
+for line in lines:
+    print(line)
