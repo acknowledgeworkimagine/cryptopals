@@ -89,3 +89,29 @@ def find_repeating_key_xor_key(blocks):
                 best_key = possible_key
         key += bytes([best_key])
     return key
+
+def find_repeats(lst):
+    counts = {}
+    for item in lst:
+        if item in counts:
+            counts[item] += 1
+        else:
+            counts[item] = 1
+    repeats = [item for item, count in counts.items() if count > 1]
+    return repeats
+
+def find_string_in_file(file_path, search_string):
+    try:
+        with open(file_path, 'r') as file:
+            line_number = 0
+            found = False
+            for line in file:
+                line_number += 1
+                if search_string in line:
+                    print(f"Found '{search_string}' in {file_path} at line {line_number}:")
+                    print(line.strip())  # Print the line where the string was found
+                    found = True
+            if not found:
+                print(f"'{search_string}' not found in {file_path}")
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found")
