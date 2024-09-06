@@ -100,6 +100,12 @@ def find_repeats(lst):
     repeats = [item for item, count in counts.items() if count > 1]
     return repeats
 
+def detect_AES(lst):
+    if len(set(lst)) != len(lst):
+        return True
+    else:
+        return False
+
 def find_string_in_file(file_path, search_string):
     try:
         with open(file_path, 'r') as file:

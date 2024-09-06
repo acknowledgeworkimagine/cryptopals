@@ -14,6 +14,7 @@ print(byte_string)
 def aes_in_ecb_mode(byte_string: bytes, key: bytes, encrypt: bool = False) -> bytes:
     
     cipher = AES.new(key, AES.MODE_ECB)
+    
     if encrypt:
         return cipher.encrypt(byte_string)
     else:
