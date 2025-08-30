@@ -2,7 +2,7 @@
 import string
 
 
-# bit-wise hamming distance
+# bit-wise hamming distance.
 def hamming_dist(bytesA, bytesB):
 
     def bytes_to_bits(byte_block):
